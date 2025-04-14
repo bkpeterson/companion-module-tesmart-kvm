@@ -23,13 +23,17 @@ class tesmartInstance extends InstanceBase {
 			...utils,
 		})
 
-		this.CHOICES_INPUTS = []
-		this.CHOICES_OUTPUTS = []
-		this.CHOICES_PRESETS = []
+		this.CHOICES_OUTPUTS = [];
+
+		for (let i = 1; i <= 8; i++) {
+			let channelObj = {}
+			channelObj.id = i
+			channelObj.label = i
+			this.CHOICES_OUTPUTS.push(channelObj)
+		}
 
 		this.pollMixerTimer = undefined
-		this.selectedInput = 1
-		this.outputRoute = {}
+		this.selectedOutput = 1
 	}
 
 	async destroy() {
@@ -58,8 +62,6 @@ class tesmartInstance extends InstanceBase {
 
 		this.config.polling_interval = this.config.polling_interval !== undefined ? this.config.polling_interval : 750
 		this.config.port = this.config.port !== undefined ? this.config.port : 23
-
-		this.initArrays(this.config.inChannels, this.config.outChannels, 8)
 		
 		this.initActions()
 		this.initFeedbacks()

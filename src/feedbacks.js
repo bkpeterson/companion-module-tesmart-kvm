@@ -5,39 +5,10 @@ module.exports = {
 		let self = this
 		let feedbacks = {}
 
-		const foregroundColor = combineRgb(255, 255, 255) // White
-		const backgroundColorRed = combineRgb(255, 0, 0) // Red
-
-		feedbacks['selected'] = {
-			type: 'boolean',
-			name: 'Status for input',
-			description: 'Show feedback selected input',
-			options: [
-				{
-					type: 'dropdown',
-					label: 'Input',
-					id: 'input',
-					default: '1',
-					choices: this.CHOICES_INPUTS,
-				},
-			],
-			style: {
-				color: combineRgb(0, 0, 0),
-				bgcolor: combineRgb(255, 0, 0),
-			},
-			callback: (feedback, bank) => {
-				let opt = feedback.options
-				if (this.selectedInput == opt.input) {
-					return true
-				} else {
-					return false
-				}
-			},
-		}
 		feedbacks['output'] = {
 			type: 'boolean',
-			name: 'Status for output',
-			description: 'Show feedback selected output',
+			name: 'Active output',
+			description: 'Show feedback for active output',
 			options: [
 				{
 					type: 'dropdown',
@@ -48,12 +19,12 @@ module.exports = {
 				},
 			],
 			style: {
-				color: combineRgb(0, 0, 0),
+				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(0, 255, 0),
 			},
 			callback: (feedback, bank) => {
 				let opt = feedback.options
-				if (this.outputRoute[opt.output] == this.selectedInput) {
+				if (opt.output == this.selectedOutput) {
 					return true
 				} else {
 					return false

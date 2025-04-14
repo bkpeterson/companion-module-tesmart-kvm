@@ -1,6 +1,6 @@
 {
-	"name": "tesmart-hdmimatrix",
-	"version": "2.0.0",
+	"name": "tesmart-kvm",
+	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -8,7 +8,7 @@
 	"license": "MIT",
  	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-tesmart-hdmimatrix.git"
+		"url": "git+https://github.com/bitfocus/companion-module-tesmart-kvm.git"
 	},
 	"dependencies": {
 		"@companion-module/base": "~1.4.1"

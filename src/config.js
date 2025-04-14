@@ -8,7 +8,7 @@ module.exports = {
 				id: 'info',
 				width: 12,
 				label: 'Information',
-				value: 'This module will connect to a TESmart HDMI MATRIX',
+				value: 'This module will connect to a TESmart KVM',
 			},
 			{
 				type: 'textinput',
@@ -25,29 +25,6 @@ module.exports = {
 				width: 6,
 				default: '5000',
 				regex: Regex.PORT,
-			},
-			{
-				type: 'dropdown',
-				id: 'outChannels',
-				label: 'Number of output channels',
-				default: '8',
-				choices: [
-					{ id: '2', label: '2' },
-					{ id: '4', label: '4' },
-					{ id: '8', label: '8' },
-					{ id: '16', label: '16' },
-				],
-			},
-			{
-				type: 'dropdown',
-				id: 'inChannels',
-				label: 'Number of input channels',
-				default: '8',
-				choices: [
-					{ id: '4', label: '4' },
-					{ id: '8', label: '8' },
-					{ id: '16', label: '16' },
-				],
 			},
 			{
 				type: 'number',
